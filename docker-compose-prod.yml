@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  react-app-prod:
+    build: 
+      context: .
+      dockerfile: ./docker/prod/Dockerfile.prod
+    ports:
+      - 8080:80
+    volumes:
+      - ./app/src:/app/src 
+    env_file:
+      - ./docker/prod/.env
